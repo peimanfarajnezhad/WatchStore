@@ -1,0 +1,10 @@
+<section class="watch-item" (click)="showWatch()">
+  <div class="image-wrapper">
+    <img [src]="watch.pictures[0]" alt="">
+  </div>
+  <div class="details">
+    <div class="text-blue">Rent from <span>${{watch.final_price.toFixed(0)}}</span>/day</div>
+    <div>Buy as low as <span>${{(watch.final_price * 90).toFixed(0)}}</span></div>
+    <div class="truncate">{{watch.name.trim()}}</div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<app-toolbar></app-toolbar>
+<div *ngIf="watchService.watches.length > 0" style="margin: 0; padding-top: 65px">
+  <div class="px-5 py-3">
+    <div class="row">
+      <h3 class="col">HOT DEALS</h3>
+      <div class="col-auto">
+        <button class="btn-filter">Filters</button>
+      </div>
+    </div>
+  </div>
+  <div class="row watches-grid" style="margin-right: 0 !important; margin-left: 0 !important">
+    <app-watch-item class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-4" *ngFor="let watch of watchService.watches" [watch]="watch"></app-watch-item>
+  </div>
+</div>

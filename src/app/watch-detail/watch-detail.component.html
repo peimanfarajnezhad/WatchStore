@@ -1,0 +1,64 @@
+<div *ngIf="watch">
+  <button routerLink="/" class="btn-close"><i class="fas fa-times"></i></button>
+  <div class="card py-3 m-3">
+    <slideshow
+      [minHeight]="'250px'"
+      [autoPlay]="true"
+      [showArrows]="true"
+      [showDots]="true"
+      [dotColor]="'#000000'"
+      backgroundSize="auto 100%"
+      [imageUrls]="watch.pictures"
+      [lazyLoad]="watch.pictures?.length > 1"
+      [autoPlayWaitForLazyLoad]="true"
+    ></slideshow>
+  </div>
+  <div class="card watch-detail p-3 m-3">
+    <h1>{{watch.name}}</h1>
+    <div class="text-blue">Rent from <span>${{watch.final_price.toFixed(0)}}</span>/day</div>
+    <div class="text-blue">Buy as low as <span>${{(watch.final_price * 90).toFixed(0)}}</span></div>
+    <p class="description mt-2">{{watch.description}}</p>
+
+    <hr>
+
+    <div class="row watch-information">
+      <div class="col">
+        <div>
+          <label>Brand</label>
+          <span>{{watch.brand}}</span>
+        </div>
+        <div>
+          <label>Band</label>
+          <span>{{watch.band_type}}</span>
+        </div>
+        <div>
+          <label>Band Material</label>
+          <span>{{watch.band_material}}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <label>Bezel</label>
+          <span>{{watch.bezel}}</span>
+        </div>
+        <div>
+          <label>Case Diameter</label>
+          <span>{{watch.case_diameter}}</span>
+        </div>
+        <div>
+          <label>Case Material</label>
+          <span>{{watch.case_material}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn-rent">Rent</button>
+      </div>
+      <div class="col">
+        <button class="btn-buy">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
